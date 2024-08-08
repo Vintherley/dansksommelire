@@ -1,28 +1,52 @@
 :root{
-    --txt-1:#6e2828;
-    --txt-2:#fff;
-    --btn-color:#e3c607;
+    --txt-1: #6e2828;
+    --txt-2: #fff;
+    --btn-color: #e3c607;
     --nav-maring: 20px;
-    --nav-: 10px ; 
+    --nav-padding: 10px;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
 .nav {
     position: fixed;
     width: 100%;
-    height: 30px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-    z-index: 100;
+    transition: background-color 0.5s;
+    z-index: 9999;
+    box-sizing: border-box;
 }
 
-.nav .logo a img {
-    height: 50px;
+.transparent {
+    background-color: rgba(0, 0, 0, 0); /* More transparent */
+}
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.5); /* Less transparent */
 }
 
 .nav .other a {
@@ -34,23 +58,28 @@ body{
 }
 
 .nav .other a:hover {
-    color: var(--btn-color) ;
+    color: var(--btn-color);
 }
 
+.logo img {
+    height: 80px;
+    width: 80px;
+}
 
-.nav .btn-contakt {
-    background-color: var(--btn-color); /* Full opacity background */
-    color: black; /* Full opacity text */
+.btn-contakt {
+    border: solid;
+    border-color: var(--btn-color);
+    color: black;
     padding: 8px 15px;
     border-radius: 5px;
 }
 
-.nav .btn-contakt a:hover {
-    background-color: #e6b800;
+.btn-contakt:hover {
+    color: #e6b800;
 }
 
-
-/* Show the overlay */
-.nav.show-overlay .navbar-overlay {
-    display: block;
+.content {
+    height: 2000px; /* For demonstration purposes */
+    background-color: #f0f0f0;
+    padding: 20px;
 }
